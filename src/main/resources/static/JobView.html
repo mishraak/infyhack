@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job View Page</title>
+    <meta charset="UTF-8">
+    <title>CMPE 275 - Job View</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+
+    <!-- Website CSS style -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!-- Website Font style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="js/auth.js"></script>
+    <script type="text/javascript" src="js/ajaxUtil.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body onload = "loadjobviewPage()">
+
+<div class="container">
+    <h1>Apply/View Job</h1>
+    <hr>
+    <div class="row">
+
+        <!-- edit form column -->
+        <div class="col-md-9 personal-info">
+            <h3>Job Information</h3>
+
+            <form class="form-horizontal" name = "jobDescriptionForm">
+
+                <div id = "jobViewPage">
+                <div id = "JobDetail"> 
+                
+                <p id = "jobTitle"></p>
+                <p id = "skill"> </p> 
+    			<p id = "description"> </p>
+     			<p id = "location"> </p>
+      			<p id = "salary"> </p>
+     			<p id = "company"></p>
+     			</div>
+                </div>
+                
+                 
+	
+                <div class="form-group">
+                    	<label class="col-md-3 control-label"></label>
+                    	 
+                    	                     
+                    <div class="col-md-8">
+                    	
+                        <input type="button" id="applybtn" class="btn btn-primary" value="Apply With Profile" onclick="apply(event)">
+              
+                        <input type="button" id="markinterestedbtn" class="btn btn-primary" value="Mark Interested" onclick="interested(event)">
+                    </div>
+                </div>
+            </form>
+            
+            <div id="data">
+                    	 <form id="fileinfo" method="POST" action = "/" enctype="multipart/form-data" onsubmit = "uploadResume()">
+           				 <input type="file" id="file" name = "file">
+           				 <INPUT TYPE="hidden" NAME="redirect" VALUE="/Dashboard.html">
+            		     <input type="submit" id="upload" value="Apply With Resume">
+            		     
+       					 </form>
+       		</div>
+       					 
+				<div id = "errorMessage"></div>
+        </div>
+    </div>
+</div>	
+
+<script>
+
+
+
+
+</script>
+
+</body>
+</html>

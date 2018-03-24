@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CMPE 275 - User Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+
+    <!-- Website CSS style -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!-- Website Font style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="js/auth.js"></script>
+    <script type="text/javascript" src="js/ajaxUtil.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+</head>
+<body>
+<div class="container-full" style="width: 100%; ">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-title text-center">
+                <h1 class="title"> User Dashboard </h1>
+            </div>
+
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="Dashboard.html" target="_self">Search for Jobs </a>
+                <a href="editProfile.html" target="_self">Edit Profile</a>
+                <a href="jobsApplied.html" target="_self">Jobs Applied</a>
+                <a href="jobsInterested.html" target="_self">Interested Jobs</a>
+                <a href="#" onclick="logout(event)">Logout</a>
+            </div>
+
+            <div id="main">
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            </div>
+        <div class="main-login main-center" >
+            <form class="form-group" name ="searchForm" id = "loginForm" onsubmit="search(event)">
+                <div class="form-group">
+                    <label for="FreeTextSearch" class="cols-sm-2 control-label">Free Text Search</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control" style="width: 150%" name="FreeTextSearch" id="FreeTextSearch" placeholder="Search by JobTitle or Company Name or Skill"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="SearchByCompany" class="cols-sm-2 control-label">Company</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="SearchByCompany" id="SearchByCompany" placeholder="Search By Company"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="SearchByLocation" class="cols-sm-2 control-label">Location</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+
+							<p>Separate multiple locations with a comma
+                        	<b>e.g SanJose, New York</b>
+                        	</p>
+                        	
+                            <input type="text" class="form-control" name="SearchByLocation" id="SearchByLocation" placeholder="Search By Location"/>
+
+                        	
+                         
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="SearchBySalary" class="cols-sm-2 control-label">Salary</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                        	<p>To search for a salary range , enter lowrange-highrange<b>e.g 2500-5000</b></p>
+                            <input type="text" class="form-control" name="SearchBySalary" id="SearchBySalary" placeholder="Search By Salary"/>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" id = "Login" class="btn btn-default btn-primary login-button" style="width: 200px"> Search for Jobs</button>
+                
+                <br>
+                <br><div id = "errorMessage"></div>
+                <div id="searchResultBlock" class="searchResultBlock"></div>
+            </form>
+
+
+
+
+        </div>
+        </div>
+
+
+        </div>
+        
+        
+
+</div>
+</body>
+</html>

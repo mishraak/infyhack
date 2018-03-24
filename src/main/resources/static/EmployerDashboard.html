@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CMPE 275 - User Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+
+    <!-- Website CSS style -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!-- Website Font style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="js/auth.js"></script>
+    <script type="text/javascript" src="js/ajaxUtil.js"></script>
+
+
+</head>
+<body>
+<div class="container-full" style="width: 100%; ">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-title text-center">
+                <h1 class="title"> Employer Dashboard </h1>
+            </div>
+
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="EmployerDashboard.html" target="_self">Browse Posted Jobs </a>
+                <a href="PostJobs.html" target="_self">Post New Positions </a>
+                <a href="editEmployerProfile.html" target="_self">Edit Profile</a>
+                <a href="#" onclick="logout(event)">Logout</a>
+            </div>
+
+            <div id="main">
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            </div>
+        <div class="container">
+            <div ng-app="myApp" ng-controller="employerDashboardCtrl">
+            <div>
+            	<b>Filter Postings By Status:</b>
+            	<select ng-model="selectedStatus" ng-options="status for status in Statuses">
+           	 		
+				</select>
+				<br></br>
+			</div>
+            <div ng-repeat="job in postedJobs| filter: { status: selectedStatus}">
+            	<div style="border:1px solid black;text-align:left">
+            		<div style="margin-left: 5px"> <b>Id:</b> {{ job.jobid }}</div>
+ 					<div style="margin-left: 5px"><b>Position:</b> {{ job.jobtitle }}</div>
+ 					<div style="margin-left: 5px"><b>Description:</b> {{ job.description }}</div>
+ 					<div style="margin-left: 5px"><b>Skills:</b> {{ job.skill }}</div>
+ 					<div style="margin-left: 5px"><b>Location:</b> {{ job.location }}</div>
+ 					<div style="margin-left: 5px"><b>Status:</b> {{ job.status }} </div>
+ 					<input type="submit" style="margin-left: 5px; margin-bottom: 5px" class="btn btn-primary" value="View/Edit Posting" ng-click="viewJob(job)" />
+ 					 
+ 				</div>
+ 				<br>
+ 				</br>
+            </div>
+        	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+			<script src="js/angController.js"></script>
+       		</div>
+        </div>
+        </div>
+        <div class="main-login" id = "searchJobResults" style="text-align: center">
+
+        </div>
+
+        </div>
+
+</div>
+</body>
+</html>

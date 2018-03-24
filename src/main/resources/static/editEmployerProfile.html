@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>CMPE 275 - Job Seeker Edit Profile</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+
+    <!-- Website CSS style -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!-- Website Font style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="js/auth.js"></script>
+    <script type="text/javascript" src="js/ajaxUtil.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="editEmployerProfileCtrl">
+
+<div class="container">
+    <h1>View/Edit Your Profile</h1>
+    <hr>
+    <img ng-src="{{company.logo_image}}" alt="Mountain View" style="width:100px;height:100px;">
+    <br></br>
+    <div>
+          <form name="postCompanyForm">
+          		<label for="companyname" class="cols-sm-2 control-label">Company Name</label>
+				<input type="text" class="form-control" ng-model="company.name" />
+				<br></br>
+				<label for="desc" class="cols-sm-2 control-label">Description</label>
+				<input type="text" class="form-control" name="desc" ng-model="company.description"  placeholder="Enter desc"/>
+				<br></br>
+				<label for="Website" class="cols-sm-2 control-label">Website</label>
+				<input type="text" class="form-control" name="Website" ng-model="company.website"  placeholder="Enter website url"/>
+				<br></br>
+				<label for="Address_Headquarters" class="cols-sm-2 control-label">Address_Headquarters</label>
+				<input type="text" class="form-control" name="Address_Headquarters" ng-model="company.address" placeholder="Enter address"/>
+				<br></br>
+				<label for="Logo_Image_URL" class="cols-sm-2 control-label">Logo_Image_URL</label>
+				<input type="text" class="form-control" name="Logo_Image_URL" ng-model="company.logo_image"  placeholder="Enter logo image url"/>
+				<br></br>
+				<input type="submit" id="submit" class="btn btn-primary btn-lg login-button" value="Update" ng-click="submitCompanyData()"/>
+				<input type="submit" id="submit" class="btn btn-primary btn-lg login-button" value="Cancel" ng-click="gotoDashboard()"/>
+            </form>  
+
+    </div>
+    <hr>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="js/angController.js"></script>
+</body>
+</html>
